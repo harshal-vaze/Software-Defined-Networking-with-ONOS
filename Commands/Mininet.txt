@@ -1,0 +1,24 @@
+
+sudo mn -h
+
+sudo wireshark &  or  {sudo HOME=~ wireshark &  or  sudo -E wireshark &}   //for X11 and SSH session
+
+sudo mn
+
+mininet> help
+mininet> nodes
+mininet> net
+mininet> dump
+mininet> h1 ping -c 1 h2
+mininet> pingall
+mininet> exit
+
+sudo mn -c  //mininet clean u
+
+sudo mn --test pingall --topo single,3
+
+sudo mn --mac   //set easy MAC address
+
+sudo ~/mininet/examples/sshd.py   //runs an SSH daemon on every host
+
+sudo mn --controller=remote,ip=192.168.0.113,port=6633
