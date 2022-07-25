@@ -14,9 +14,68 @@ ovs-vsctl list-ports br0
 
 
 ovs-vsctl set bridge br0 protocols=OpenFlow13
+ovs-vsctl set bridge br1 protocols=OpenFlow13
+ovs-vsctl set bridge br2 protocols=OpenFlow13
+ovs-vsctl set bridge br3 protocols=OpenFlow13
 
 ovs-vsctl set-controller br0 tcp:192.168.0.113:6653
 
 ovs-vsctl set-fail-mode br0 secure
 
 ovs-vsctl show
+
+ovs-ofctl -O OpenFlow13 dump-flows br0
+
+ovs-ofctl -O OpenFlow13 dump-ports br0
+
+
+
+Useful OpenVSwitch Commands
+===========================
+
+ovs-appctl: for querying and controlling Open vSwitch daemon
+	logging stuff
+	-V
+
+ovs-dpctl: Open vSwitch datapath management utility
+	add-dp DP
+	dump-dps
+	dump-flows DP
+
+ovs-ofctl: OpenFlow switch management utility
+	show SWITCH
+	dump-flows SWITCH
+	add-flow SWITCH FLOW
+	mod-port SWITCH IFACE ACT (hmm?)
+
+ovs-vsctl: ovs-vswitchd management utility
+	list-br
+	add-br br0
+	add-port br0 eth0
+	list-ifaces br0
+	emer-reset
+	-> various database commands (list, get, set, add, remove etc.)
+
+
+
+ovs-controller: OpenFlow controller
+	tcp:IP[:PORT] -H, --hub etc.
+	--detach
+
+
+ovs-pki, for managing a simple OpenFlow public key infrastructure
+
+ovs-benchmark: Open vSwitch flow setup benchmark utility
+	(between controller and switch, setting up flows etc.)
+
+
+Setting up:
+
+ovs-controller ptcp:6633 --detach
+ovs-vswitchd --detach etc.
+/etc/init.d/network restart
+	ifconfig eth1 0.0.0.0
+	ifconfig eth2 0.0.0.0
+	ifconfig br0 192.168.1.1
+
+subnet test: 192.168.1.188 - 192.168.1.198
