@@ -1,0 +1,68 @@
+# Creates a new VPLS
+onos> vpls create {$VPLS_NAME}
+ 
+# Deletes an existing VPLS
+onos> vpls delete {$VPLS_NAME}
+ 
+# Lists the configured VPLSs
+onos> vpls list
+Configured VPLSs
+----------------
+VPLS1
+VPLS2
+ 
+# Shows the list configured VPLSs, including their interfaces and the encapsulation type in use. If a VPLS name is specified, only the details for that VPLS are returned.
+onos> vpls show [$VPLS_NAME]
+Configured VPLSs
+----------------
+VPLS name: VPLS1
+Associated interfaces: [h1, h2, h5, h6]
+Encapsulation: NONE
+----------------
+VPLS name: VPLS2
+Associated interfaces: [h3, h4]
+Encapsulation: VLAN
+----------------
+ 
+# Sets the encapsulation type for a VPLS
+onos> vpls set-encap {$VPLS_NAME} {VLAN|MPLS|NONE}
+
+
+
+
+# Adds an existing interface (in netcfg) to an existing VPLS
+onos> vpls add-if {$VPLS_NAME} {$INTERFACE_NAME}
+# Removes an existing interface from an existing VPLS
+onos> vpls rem-if {$VPLS_NAME} {$INTERFACE_NAME}
+
+
+
+# Cleans the status of the VPLS application (i.e., deletes VPLSs, removes interfaces from existing VPLSs and withdraws intents)
+onos> vpls clean
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+Example:
+
+onos> interface-add -v 100 of:0000000000000001/1 h1
+onos> interface-add -v 200 of:0000000000000002/1 h2
+onos> interface-add -v 300 of:0000000000000004/1 h3
+onos> interface-add -v 400 of:0000000000000002/1 h4
+onos> interface-add of:0000000000000005/1 h5
+onos> interface-add of:0000000000000006/1 h6
+ 
+onos> vpls create VPLS1
+onos> vpls add-if VPLS1 h1
+onos> vpls add-if VPLS1 h2
+onos> vpls add-if VPLS1 h5
+onos> vpls add-if VPLS1 h6
+onos> vpls set-encap VLPS1 VLAN
+ 
+onos> vpls create VPLS2
+onos> vpls add-if VPLS2 h3
+onos> vpls add-if VPLS2 h4
+
+

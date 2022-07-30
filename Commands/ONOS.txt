@@ -1,3 +1,5 @@
+https://wiki.onosproject.org/display/ONOS/Appendix+A+%3A+CLI+commands
+
 ssh -p 8101 karaf@192.168.0.113 enter the password 'karaf'
 
 apps -a -s

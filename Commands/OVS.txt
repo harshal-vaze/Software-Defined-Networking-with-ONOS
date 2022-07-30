@@ -13,10 +13,11 @@ ovs-vsctl list-ports br0
 
 
 
-ovs-vsctl set bridge br0 protocols=OpenFlow13
 ovs-vsctl set bridge br1 protocols=OpenFlow13
 ovs-vsctl set bridge br2 protocols=OpenFlow13
 ovs-vsctl set bridge br3 protocols=OpenFlow13
+
+ovs-vsctl set bridge br0 protocols=OpenFlow13
 
 ovs-vsctl set-controller br0 tcp:192.168.0.113:6653
 
