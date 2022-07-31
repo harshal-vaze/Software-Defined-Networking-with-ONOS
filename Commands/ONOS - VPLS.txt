@@ -47,22 +47,19 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 Example:
 
-onos> interface-add -v 100 of:0000000000000001/1 h1
-onos> interface-add -v 200 of:0000000000000002/1 h2
-onos> interface-add -v 300 of:0000000000000004/1 h3
-onos> interface-add -v 400 of:0000000000000002/1 h4
-onos> interface-add of:0000000000000005/1 h5
-onos> interface-add of:0000000000000006/1 h6
+interface-add of:00008a507a0c8f4a/14 h1
+interface-add of:0000a2f8233e3643/14 h2
+interface-add of:0000b210c06d6046/14 s1
+interface-add of:0000fa9767881347/14 s2
  
-onos> vpls create VPLS1
-onos> vpls add-if VPLS1 h1
-onos> vpls add-if VPLS1 h2
-onos> vpls add-if VPLS1 h5
-onos> vpls add-if VPLS1 h6
-onos> vpls set-encap VLPS1 VLAN
+vpls create VPLS1
+vpls add-if VPLS1 h1
+vpls add-if VPLS1 s2
  
-onos> vpls create VPLS2
-onos> vpls add-if VPLS2 h3
-onos> vpls add-if VPLS2 h4
+vpls create VPLS2
+vpls add-if VPLS2 s1
+vpls add-if VPLS2 h2
 
+vpls list 
+vpls show
 
