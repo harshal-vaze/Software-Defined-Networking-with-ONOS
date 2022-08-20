@@ -1,0 +1,44 @@
+****FRR****
+
+https://bsdrp.net/documentation/end-users_docs
+
+/usr/local/etc/frr/frr.conf
+
+sysrc frr_enable=yes
+service frr start
+cli
+
+
+
+
+****DHCP Client****
+
+https://bsdrp.net/documentation/examples/dhcp_relay_and_server_lab
+
+sysrc ifconfig_em1="DHCP"
+sysrc gateway_enable=NO
+
+sed -i "" 's/em/vtnet/g' /etc/rc.conf
+
+service netif restart
+service routing restart
+config save
+
+
+
+
+****BGP Config****
+
+sysrc ifconfig_em0="10.0.4.2/24"
+
+
+router bgp 500
+ bgp router-id 10.10.10.10
+ neighbor 10.0.2.1 remote-as 200
+ neighbor 10.0.2.1 ebgp-multihop
+ neighbor 10.0.1.1 remote-as 100
+ neighbor 10.0.1.1 ebgp-multihop
+ neighbor 192.168.0.113 remote-as 500
+ neighbor 192.168.0.113 port 2000
+ neighbor 192.168.122.174 remote-as 500
+
