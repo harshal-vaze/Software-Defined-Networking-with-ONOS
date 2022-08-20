@@ -1,0 +1,47 @@
+Building configuration...
+
+Current configuration:
+!
+frr version 7.2
+frr defaults traditional
+hostname bgpsp1
+!
+interface em0
+ ip address 10.0.1.2/24
+ ip address 10.0.2.2/24
+ ip address 10.0.3.2/24
+ ip address 10.0.4.2/24
+ ip address 10.10.0.2/24
+ ip address 10.20.0.2/24
+ ip address 10.30.0.2/24
+!
+interface em3
+ shutdown
+!
+interface lo0
+ ip address 10.10.10.10/32
+!
+router bgp 500
+ bgp router-id 10.10.10.10
+ neighbor 10.0.1.1 remote-as 100
+ neighbor 10.0.1.1 ebgp-multihop 255
+ neighbor 10.0.2.1 remote-as 200
+ neighbor 10.0.2.1 ebgp-multihop 255
+ neighbor 10.0.3.1 remote-as 300
+ neighbor 10.0.3.1 ebgp-multihop 255
+ neighbor 10.0.4.1 remote-as 400
+ neighbor 10.0.4.1 ebgp-multihop 255
+ neighbor 10.10.0.1 remote-as 500
+ neighbor 10.20.0.1 remote-as 500
+ neighbor 10.30.0.1 remote-as 500
+ neighbor 192.168.0.114 remote-as 500
+ neighbor 192.168.0.114 port 2000
+ !
+ address-family ipv4 unicast
+  network 10.30.0.0/24
+ exit-address-family
+!
+line vty
+!
+end
+
