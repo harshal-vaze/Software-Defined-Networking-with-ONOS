@@ -1,3 +1,27 @@
+
+ovs-vswitchd --version
+
+ovs-ofctl --version
+
+
+
+ovs-vsctl set bridge br0 protocols=OpenFlow15
+
+ovs-vsctl set-controller br0 tcp:192.168.0.114:6653
+
+ovs-vsctl set-fail-mode br0 secure
+
+ovs-vsctl show
+
+
+
+ovs-ofctl -O OpenFlow13 dump-flows br0
+
+ovs-ofctl -O OpenFlow13 dump-ports br0
+
+
+
+
 ovs-vsctl add-br br0
 
 ifconfig ethX 0
@@ -10,24 +34,10 @@ ovs-vsctl add-port br0 ethZ
 
 ovs-vsctl list-ports br0
 
-
-
-
 ovs-vsctl set bridge br1 protocols=OpenFlow13
 ovs-vsctl set bridge br2 protocols=OpenFlow13
 ovs-vsctl set bridge br3 protocols=OpenFlow13
 
-ovs-vsctl set bridge br0 protocols=OpenFlow13
-
-ovs-vsctl set-controller br0 tcp:192.168.0.114:6653
-
-ovs-vsctl set-fail-mode br0 secure
-
-ovs-vsctl show
-
-ovs-ofctl -O OpenFlow13 dump-flows br0
-
-ovs-ofctl -O OpenFlow13 dump-ports br0
 
 
 
