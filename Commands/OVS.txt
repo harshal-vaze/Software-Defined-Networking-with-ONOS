@@ -5,7 +5,7 @@ ovs-ofctl --version
 
 
 
-ovs-vsctl set bridge br0 protocols=OpenFlow15
+ovs-vsctl set bridge br0 protocols=OpenFlow13
 
 ovs-vsctl set-controller br0 tcp:192.168.0.114:6653
 
@@ -18,6 +18,8 @@ ovs-vsctl show
 ovs-ofctl -O OpenFlow13 dump-flows br0
 
 ovs-ofctl -O OpenFlow13 dump-ports br0
+
+ovs-vsctl list interface eth3
 
 
 
