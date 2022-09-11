@@ -1,0 +1,38 @@
+{
+  "priority": 100,
+  "timeout": 0,
+  "isPermanent": true,
+  "deviceId": "of:00004e6d3cf34349",
+  "treatment": {
+    "instructions": [
+      {
+        "type": "OUTPUT",
+        "port": "3"
+      }
+    ]
+  },
+  "selector": {
+    "criteria": [
+      {
+        "type": "ETH_DST",
+        "mac": "CA:03:17:6D:00:08"
+      },
+      {
+        "type": "ETH_SRC",
+        "mac": "CA:01:0F:AE:00:08"
+      },
+      {
+        "type": "IN_PORT",
+        "port": "1"
+      },
+      {
+        "type": "IPV4_SRC",
+        "ip": "10.0.0.1/24"
+      },
+      {
+        "type": "IPV4_DST",
+        "ip": "10.0.0.3/24"
+      }
+    ]
+  }
+}
