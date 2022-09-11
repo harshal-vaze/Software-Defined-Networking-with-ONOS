@@ -22,3 +22,6 @@ sudo mn --mac   //set easy MAC address
 sudo ~/mininet/examples/sshd.py   //runs an SSH daemon on every host
 
 sudo mn --controller=remote,ip=192.168.0.113,port=6633
+
+
+sudo mn --controller=remote,ip=192.168.0.114 --custom ~/mininet/custom/mytopo.py --topo mytopo --switch=ovs,protocols=OpenFlow13
