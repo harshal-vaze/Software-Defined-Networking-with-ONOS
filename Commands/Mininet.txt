@@ -15,7 +15,7 @@ mininet> exit
 
 sudo mn -c  //mininet clean u
 
-sudo mn --test pingall --topo single,3
+sudo mn --test pingall --topo single,3 
 
 sudo mn --mac   //set easy MAC address
 
@@ -25,3 +25,13 @@ sudo mn --controller=remote,ip=192.168.0.113,port=6633
 
 
 sudo mn --controller=remote,ip=192.168.0.114 --custom ~/mininet/custom/mytopo.py --topo mytopo --switch=ovs,protocols=OpenFlow13
+
+
+--topo single,3 or --topo linear,5 or --topo tree,depth=2,fanout=8
+
+--switch=ovs or --switch user or --switch ovsk
+
+--test pingall ot --test none (to record time taken)
+
+--controller ref or default or ovsc or ryu or nox
+
