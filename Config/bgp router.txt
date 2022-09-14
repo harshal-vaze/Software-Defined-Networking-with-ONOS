@@ -1,0 +1,50 @@
+conf t
+router bgp 500
+ neighbor 10.10.3.1 remote-as 300
+ neighbor 10.10.3.1 ebgp-multihop 255
+ neighbor 10.20.4.1 remote-as 400
+ neighbor 10.10.4.1 ebgp-multihop 255
+end
+wr
+
+conf t
+int em0
+ip address 10.0.1.2/24
+ip address 10.0.2.2/24
+ip address 10.0.3.2/24
+ip address 10.0.4.2/24
+end
+wr
+wr
+sh int brief
+
+
+conf t
+router bgp 500
+ neighbor 192.168.0.107 remote-as 500
+ neighbor 192.168.0.107 port 2000
+end
+wr
+
+
+192.168.0.107/24
+
+conf t
+int g0/0
+no shut
+ip address 10.30.0.1 255.255.255.0
+int lo0
+no shut
+ip address 7.7.7.7 255.255.255.255
+end
+wr
+
+
+conf t
+router bgp 500
+no neighbor 10.10.0.1 remote-as 500
+no neighbor 10.10.0.1 ebgp-multihop 255
+
+end
+wr
+
