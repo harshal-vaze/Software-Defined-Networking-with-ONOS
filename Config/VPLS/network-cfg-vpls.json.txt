@@ -1,32 +1,29 @@
+
 {
   "ports": {
     "of:00008a507a0c8f4a/14": {
-      "interfaces": [
-        {
+      "interfaces": [ {
           "name": "h1",
-        }
-      ]
+          "mac" : "CA:01:11:1D:00:08"
+        } ]
     },
     "of:0000a2f8233e3643/14": {
-      "interfaces": [
-        {
+      "interfaces": [ {
           "name": "h2",
-        }
-      ]
+          "mac" : "CA:02:11:2D:00:08"
+        } ]
     },
     "of:0000b210c06d6046/14": {
-      "interfaces": [
-        {
+      "interfaces": [ {
           "name": "s1",
-        }
-      ]
+          "mac" : "CA:03:11:3D:00:08"
+        } ]
     },
     "of:0000fa9767881347/14": {
-      "interfaces": [
-        {
+      "interfaces": [ {
           "name": "s2",
-        }
-      ]
+          "mac" : "CA:04:11:4D:00:08"
+        } ]
     }
   },
   "apps" : {
