@@ -7,7 +7,7 @@ ovs-ofctl --version
 
 ovs-vsctl set bridge br0 protocols=OpenFlow14 ,OpenFlow10,OpenFlow12,OpenFlow13
 
-ovs-vsctl set-controller br0 tcp:192.168.0.114:6653
+ovs-vsctl set-controller br0 tcp:192.168.0.119:6653
 
 ovs-vsctl set-fail-mode br0 secure
 
@@ -15,7 +15,7 @@ ovs-vsctl show
 
 
 
-ovs-ofctl -O OpenFlow14 dump-flows br0
+ovs-ofctl -O OpenFlow13 dump-flows br0
 
 ovs-ofctl -O OpenFlow14 dump-ports br0
 

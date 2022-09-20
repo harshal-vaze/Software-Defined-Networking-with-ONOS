@@ -2,7 +2,7 @@ https://wiki.onosproject.org/display/ONOS/Appendix+A+%3A+CLI+commands
 
 
 
-curl -X POST -H "content-type:application/json" http://192.168.0.114:8181/onos/v1/network/configuration -d @/opt/onos/config/network-cfg-bgp.json --user onos:rocks
+curl -X POST -H "content-type:application/json" http://192.168.0.119:8181/onos/v1/network/configuration -d @/opt/onos/config/network-cfg.json --user onos:rocks
 
 
 

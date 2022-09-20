@@ -43,7 +43,7 @@
             "bgpSpeakers" : [
                 {
                     "name" : "speaker1",
-                    "connectPoint" : "of:0000a2f8233e3643/10",
+                    "connectPoint" : "of:000022494702a540/10",
                     "peers" : [
                         "10.0.1.1",
                         "10.0.2.1",
