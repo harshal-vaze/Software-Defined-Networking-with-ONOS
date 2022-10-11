@@ -17,7 +17,7 @@ ovs-vsctl show
 
 
 
-ovs-ofctl -O OpenFlow13 dump-flows br0
+ovs-ofctl -O OpenFlow14 dump-flows br0
 
 ovs-ofctl -O OpenFlow14 dump-ports br0
 
