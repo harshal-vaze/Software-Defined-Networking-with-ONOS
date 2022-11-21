@@ -23,10 +23,10 @@ VPLS name: VPLS2
 Associated interfaces: [h3, h4]
 Encapsulation: VLAN
 ----------------
+
  
 # Sets the encapsulation type for a VPLS
 onos> vpls set-encap {$VPLS_NAME} {VLAN|MPLS|NONE}
-
 
 
 

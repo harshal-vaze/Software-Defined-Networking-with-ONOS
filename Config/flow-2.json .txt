@@ -1,0 +1,34 @@
+{
+  "flows": [
+  {
+    "priority": 100,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000e20906dbb246",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "1"
+        }
+      ]
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_DST",
+          "mac": "CA:01:0F:AE:00:08"
+        },
+        {
+          "type": "ETH_SRC",
+          "mac": "CA:03:17:6D:00:08"
+        },
+        {
+          "type": "IN_PORT",
+          "port": "3"
+        }
+       ]
+     }
+   }
+ ]
+}

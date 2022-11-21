@@ -1,0 +1,7 @@
+{
+ "type": "HostToHostIntent",
+ "appID": "org.onosproject.ovsdb",
+ "priority": 1000,
+ "one": "CA:02:0F:BE:00:08/None",
+ "two": "CA:03:17:6D:00:08/None",
+}
