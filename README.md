@@ -1,4 +1,4 @@
-# Software-Defined-Networking-with-ONOS
+# **Software-Defined-Networking-with-ONOS**
 
 The aim of this thesis was to study the functionalities of software-defined networks and practically develop the real-world resembling environment in the network emulator environment to evaluate the performance of differ-ent SDN components.
 
